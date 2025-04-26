@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" overflow="visible" enable-background="new 0 0 24 24"
+	 xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<defs>
+		<rect id="SVGID_5_" width="24" height="24"/>
+	</defs>
+	<clipPath id="SVGID_6_">
+		<use xlink:href="#SVGID_5_"  overflow="visible"/>
+	</clipPath>
+	
+		<path clip-path="url(#SVGID_6_)" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M1,13.5h6.5c1.5,0,1.312,3,4.5,3c3.188,0,3-3,4.5-3H23"/>
+</g>
+<g>
+	<defs>
+		<rect id="SVGID_4_" width="24" height="24"/>
+	</defs>
+	<clipPath id="SVGID_7_">
+		<use xlink:href="#SVGID_4_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_7_)" fill="none" stroke="#000000" stroke-miterlimit="10" d="M19.5,22.5h-15c-2.209,0-4-1.791-4-4v-13
+		c0-1.657,1.343-3,3-3h17c1.657,0,3,1.343,3,3v13C23.5,20.709,21.709,22.5,19.5,22.5z"/>
+</g>
+<g>
+	<defs>
+		<rect id="SVGID_3_" width="24" height="24"/>
+	</defs>
+	<clipPath id="SVGID_8_">
+		<use xlink:href="#SVGID_3_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_8_)" fill="none" stroke="#000000" stroke-miterlimit="10" d="M2.5,13V6.5c0-1.105,0.895-2,2-2h15
+		c1.105,0,2,0.895,2,2V13"/>
+</g>
+<g>
+	<defs>
+		<rect id="SVGID_2_" width="24" height="24"/>
+	</defs>
+	<clipPath id="SVGID_9_">
+		<use xlink:href="#SVGID_2_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_9_)" fill="none" stroke="#000000" stroke-miterlimit="10" d="M2.5,14V9.5c0-1.105,0.895-2,2-2h15
+		c1.105,0,2,0.895,2,2V14"/>
+</g>
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="24" height="24"/>
+	</defs>
+	<clipPath id="SVGID_10_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<path clip-path="url(#SVGID_10_)" fill="none" stroke="#000000" stroke-miterlimit="10" d="M2.5,14v-1.5c0-1.105,0.895-2,2-2h15
+		c1.105,0,2,0.895,2,2V14"/>
+</g>
+</svg>

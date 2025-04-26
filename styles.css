@@ -1,0 +1,703 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #1c1c1e;
+    color: #f5f5f7;
+    line-height: 1.5;
+}
+header {
+    background-color: #242426;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #3a3a3c;
+}
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.register-section {
+    margin-bottom: 40px;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #3a3a3c;
+    padding-bottom: 20px;
+}
+.header-container h1 {
+    position: relative;
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Simplified underline */
+.header-container h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #0a84ff;
+    border-radius: 2px;
+}
+
+.button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #0a84ff;
+    color: white;
+    border: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    background-color: #0070df;
+}
+
+.info-row {
+    display: flex;
+    margin-bottom: 30px;
+}
+.info-column {
+    flex: 1;
+}
+.info-column:first-child {
+    margin-right: 40px;
+}
+.info-label {
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #f5f5f7;
+}
+.info-value {
+    color: #f5f5f7;
+}
+.form-row {
+    display: flex;
+    margin-bottom: 30px;
+}
+.form-column {
+    flex: 1;
+}
+.form-column:first-child {
+    margin-right: 40px;
+}
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    color: #f5f5f7;
+}
+.form-note {
+    font-size: 13px;
+    color: #86868b;
+    margin-top: 8px;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #3a3a3c;
+    background-color: #2c2c2e;
+    color: #f5f5f7;
+    font-size: 14px;
+}
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* IMPROVED BUNDLE ID SECTION */
+.bundle-id-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1px;
+    background-color: #1c1c1e;
+}
+
+.bundle-id-label {
+    font-weight: 500;
+    margin-bottom: 0;
+    color: #f5f5f7;
+}
+
+.bundle-id-container .radio-group {
+    margin-bottom: 0;
+    gap: 18px;
+}
+
+.bundle-id-container .radio-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.bundle-id-container input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    outline: none;
+    margin-right: 0;
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    flex-shrink: 0;
+}
+
+.bundle-id-container input[type="radio"]:checked {
+    border: 2px solid #0a84ff;
+    background-color: transparent;
+}
+
+.bundle-id-container input[type="radio"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #0a84ff;
+}
+
+.bundle-id-container input[type="radio"]:not(:checked) {
+    background-color: transparent;
+}
+
+.bundle-id-container .radio-label.active {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.bundle-id-container input[type="radio"]:checked + span {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.bundle-id-container span {
+    color: #ffffff;
+    font-size: 15px;
+    margin-left: 6px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+input[type="radio"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    accent-color: #0a84ff;
+}
+.capabilities-header {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #3a3a3c;
+}
+.services-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 30px;
+}
+.services-table th {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #3a3a3c;
+    color: #86868b;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: #1c1c1e;
+}
+.services-table td {
+    padding: 16px 15px;
+    border-bottom: 1px solid #2c2c2e;
+    vertical-align: middle;
+}
+
+.services-table tr {
+    border-bottom: 1px solid #2c2c2e;
+    background-color: #1c1c1e;
+}
+
+.services-table tr:nth-child(even) {
+    background-color: #1c1c1e;
+}
+
+.services-table tr:nth-child(odd) {
+    background-color: #1c1c1e;
+}
+
+.services-table tr:hover {
+    background-color: #2c2c2e;
+}
+
+/* Remove left border highlight and update selection style */
+.services-table input[type="checkbox"]:checked ~ tr,
+.services-table input[type="checkbox"]:checked {
+    background-color: transparent;
+}
+
+/* Increasing space between columns - Move ENABLE all the way to left */
+.services-table td:first-child {
+    width: 80px;
+    text-align: left;
+    padding-left: 0;
+}
+
+.services-table th:first-child {
+    text-align: left;
+    padding-left: 0;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #0a84ff;
+    margin: 0;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Style for radio options */
+.radio-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-left: 6px;
+}
+
+.radio-circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid #86868b;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.option-text {
+    color: #f5f5f7;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* Link styling */
+.learn-more {
+    color: #0a84ff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.learn-more:after {
+    content: '>';
+    margin-left: 4px;
+    font-size: 12px;
+}
+
+.service-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: invert(100%);
+    opacity: 0.9;
+}
+.service-name {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 0;
+    color: #f5f5f7;
+    white-space: nowrap;
+}
+.service-name label {
+    cursor: pointer;
+    margin-bottom: 0;
+    display: inline;
+    font-weight: 500;
+}
+.info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #86868b;
+    color: #86868b;
+    font-size: 11px;
+    margin-left: 8px;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+/* Subtle focus state */
+input[type="text"]:focus {
+    outline: none;
+    border-color: #0a84ff;
+}
+
+.options-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.options-list li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 24px;
+    font-size: 14px;
+    color: #f5f5f7;
+}
+
+.options-list li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 1px solid #3a3a3c;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+/* Styling for Data Protection options */
+.radio-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.radio-circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid #3a3a3c;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.option-text {
+    color: #f5f5f7;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* Link styling */
+.learn-more {
+    color: #0a84ff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.learn-more:after {
+    content: '>';
+    margin-left: 4px;
+    font-size: 12px;
+}
+
+/* Better styling for the development notes */
+td:last-child {
+    color: rgba(245, 245, 247, 0.8);
+    font-size: 13px;
+}
+
+/* Add more spacing between tabs */
+.capabilities-header {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* Adjust tab navigation styling to match screenshot */
+.tab-navigation {
+    display: flex;
+    border-bottom: 1px solid #3a3a3c;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.tab-item {
+    padding: 10px 20px 15px 0;
+    margin-right: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #86868b;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-item.active {
+    color: #0a84ff;
+    font-weight: 500;
+}
+
+.tab-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #0a84ff;
+}
+
+/* Fix sub-option indentation */
+tr td[colspan="2"] {
+    padding-top: 0;
+    padding-bottom: 12px;
+    padding-left: 60px;
+    border-bottom: none;
+    background-color: #1c1c1e;
+}
+
+/* Add configure button to match screenshot */
+.configure-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #2c2c2e;
+    color: #f5f5f7;
+    border: 1px solid #3a3a3c;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Adjusting description column */
+.services-table td:last-child {
+    color: #f5f5f7;
+    font-size: 14px;
+    line-height: 1.4;
+    max-width: 350px;
+}
+
+/* Table header styling */
+.services-table thead th {
+    color: #86868b;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+/* Increasing space between columns */
+.services-table th:nth-child(2), 
+.services-table td:nth-child(2) {
+    width: auto;
+    min-width: 250px;
+}
+
+/* Tab content styling */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Prevent dragging and copying elements */
+.button, .logo-img, .service-icon, .info-icon, 
+input[type="checkbox"], input[type="radio"],
+.tab-item, .configure-btn {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Apply protection to entire service name rows */
+.service-name, .logo {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Prevent right click on content area */
+.no-copy-content {
+    -webkit-touch-callout: none;
+    pointer-events: auto;
+}
+
+/* Simple Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    /* Make content fit mobile width */
+    main {
+        padding: 15px 20px;
+        width: auto;
+        max-width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+    
+    /* Stack elements vertically */
+    .form-row, .info-row {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .form-column:first-child, .info-column:first-child {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    /* Make tables fit screen */
+    .services-table {
+        display: block;
+        width: 100%;
+        table-layout: fixed;
+    }
+    
+    .services-table th, 
+    .services-table td {
+        word-break: break-word;
+    }
+    
+    /* Hide the description column on mobile */
+    .services-table th:nth-child(3),
+    .services-table td:nth-child(3) {
+        display: none;
+    }
+    
+    /* Fix info icon positioning on mobile */
+    .service-name {
+        font-size: 14px;
+        max-width: 200px;
+        white-space: normal;
+        position: relative;
+        padding-right: 30px; /* Add space for the info icon */
+    }
+    
+    .info-icon {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 0;
+    }
+    
+    /* Fix header layout */
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .export-button {
+        margin-top: 15px;
+        width: 100%;
+    }
+    
+    /* Bundle ID radio layout fix */
+    .bundle-id-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .bundle-id-container .radio-group {
+        margin-top: 10px;
+    }
+    
+    /* Fix input fields width */
+    input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .form-note {
+        max-width: 100%;
+    }
+    
+    /* Fix section widths */
+    .info-column, .form-column {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Style for the UDID container */
+.udid-container {
+    position: relative;
+    top: -1px; /* Shifting it up, just like you wanted */
+}
+
+input[type="text"] {
+    width: 100%;
+} 

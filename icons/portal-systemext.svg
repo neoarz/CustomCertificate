@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Xcode_SystemExtensionInstall</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M7,0.64092 C3.153274,2.50102 0.5,6.44066 0.5,11 C0.5,17.351275 5.648725,22.5 12,22.5 C18.35127,22.5 23.5,17.351275 23.5,11 C23.5,6.44066 20.84673,2.50102 17,0.64092 L17,1.76462 C20.27581,3.54188 22.5,7.0112 22.5,11 C22.5,16.79899 17.79899,21.5 12,21.5 C6.20101,21.5 1.5,16.79899 1.5,11 C1.5,7.0112 3.72419,3.54188 7,1.76462 L7,0.64092 Z" id="path-1"></path>
+    </defs>
+    <g id="Xcode_SystemExtensionInstall" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3" transform="translate(6.000000, 1.000000)" fill="#000000" fill-rule="nonzero">
+            <path d="M9.5,7.5 L13.2071068,7.5 L6,14.7071068 L-1.20710678,7.5 L2.5,7.5 L2.5,-0.5 L9.5,-0.5 L9.5,7.5 Z M10.7928932,8.5 L8.5,8.5 L8.5,0.5 L3.5,0.5 L3.5,8.5 L1.20710678,8.5 L6,13.2928932 L10.7928932,8.5 Z" id="Stroke-1"></path>
+        </g>
+        <g id="Group-6" transform="translate(0.000000, 1.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Clip-5" fill="#000000" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

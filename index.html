@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neosign Developer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Neosign Logo" class="logo-img">
+            <span>Developer</span>
+        </div>
+    </header>
+    
+    <main class="no-copy-content">
+        <div class="register-section">
+            <div class="header-container">
+                <h1>Create Your Own Certificate</h1>
+                <button class="button export-button" id="export-btn">Export Configuration</button>
+            </div>
+            
+            <div class="info-row">
+                <div class="info-column">
+                    <div class="info-label">Platform</div>
+                    <div class="info-value">iOS, iPadOS, macOS, tvOS, watchOS, visionOS</div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-column">
+                    <label>Description</label>
+                    <input type="text" placeholder="Enter description">
+                    <div class="form-note">You cannot use special characters such as @, &, *, "</div>
+                </div>
+                <div class="form-column udid-container">
+                    <label>Device UDID</label>
+                    <input type="text" placeholder="Enter your device UDID">
+                    <div class="form-note">24-character hexadecimal string unique to your iOS device</div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-column">
+                    <!-- Discord username field added here -->
+                    <label>Discord Username</label>
+                    <div class="discord-input">
+                        <input type="text" placeholder="username#0000">
+                    </div>
+                    <div class="form-note">Include your Discord username for communication and updates</div>
+                </div>
+                <div class="form-column">
+                    <!-- IMPROVED BUNDLE ID SECTION -->
+                    <div class="bundle-id-container">
+                        <label class="bundle-id-label">Bundle ID</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="bundle-id" id="explicit" checked>
+                                <span>Explicit</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="bundle-id" id="wildcard">
+                                <span>Wildcard</span>
+                            </label>
+                        </div>
+                    </div>
+                    <input type="text" placeholder="com.example.app">
+                    <div class="form-note">We recommend using a reverse-domain name style string (i.e., com.domainname.appname). It cannot contain an asterisk (*).</div>
+                </div>
+            </div>
+            
+            <!-- Tab navigation to match screenshot -->
+            <div class="tab-navigation">
+                <div class="tab-item active" data-tab="capabilities">Capabilities</div>
+                <div class="tab-item" data-tab="app-services">App Services</div>
+            </div>
+            
+            <!-- Capabilities Table -->
+            <div id="capabilities-tab" class="tab-content active">
+                <table class="services-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 80px; text-align: left; padding-left: 0;">ENABLE</th>
+                            <th>NAME</th>
+                            <th style="width: 30%">NOTES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" id="service1"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-5g-network-slicing.svg" class="service-icon" alt="5G Network Slicing">
+                                <label for="service1">5G Network Slicing</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service2"></td>
+                            <td class="service-name">
+                                <img src="icons/access-wifi.svg" class="service-icon" alt="Access Wi-Fi Information">
+                                <label for="service2">Access Wi-Fi Information</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service3"></td>
+                            <td class="service-name">
+                                <img src="icons/accessibility.svg" class="service-icon" alt="Accessibility Merchant API Control">
+                                <label for="service3">Accessibility Merchant API Control</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service4"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-app-at-test.svg" class="service-icon" alt="App Attest">
+                                <label for="service4">App Attest</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service5"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-app-at-test.svg" class="service-icon" alt="App Attest Opt-In">
+                                <label for="service5">App Attest Opt-In</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service6"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-app-groups.svg" class="service-icon" alt="App Groups">
+                                <label for="service6">App Groups</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service8"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-apple-pay.svg" class="service-icon" alt="Apple Pay Payment Processing">
+                                <label for="service8">Apple Pay Payment Processing</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service9"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-associated-domains.svg" class="service-icon" alt="Associated Domains">
+                                <label for="service9">Associated Domains</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service10"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-checkmark-seal.svg" class="service-icon" alt="AutoFill Credential Provider">
+                                <label for="service10">AutoFill Credential Provider</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service11"></td>
+                            <td class="service-name">
+                                <img src="icons/classkit.svg" class="service-icon" alt="ClassKit">
+                                <label for="service11">ClassKit</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service12"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-communication-notification.svg" class="service-icon" alt="Communication Notifications">
+                                <label for="service12">Communication Notifications</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service13"></td>
+                            <td class="service-name">
+                                <img src="icons/exclamationmark-bubble.svg" class="service-icon" alt="Critical Messaging">
+                                <label for="service13">Critical Messaging</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service14"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-cnwkprtcol.svg" class="service-icon" alt="Custom Network Protocol">
+                                <label for="service14">Custom Network Protocol</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service15"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-data-protection.svg" class="service-icon" alt="Data Protection">
+                                <label for="service15">Data Protection</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service16"></td>
+                            <td class="service-name">
+                                <img src="icons/phone-connection.svg" class="service-icon" alt="Default Calling App">
+                                <label for="service16">Default Calling App</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service17"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-text.bubble.svg" class="service-icon" alt="Default Messaging App">
+                                <label for="service17">Default Messaging App</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service18"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-map.svg" class="service-icon" alt="Default Navigation App">
+                                <label for="service18">Default Navigation App</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service19"></td>
+                            <td class="service-name">
+                                <img src="icons/bubble-left-and-bubble-right.svg" class="service-icon" alt="Default Translation App">
+                                <label for="service19">Default Translation App</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service20"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-driverkit.svg" class="service-icon" alt="DriverKit (development)">
+                                <label for="service20">DriverKit (development)</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td>Development only. <a href="#" class="learn-more">Learn more</a><br>
+                            Provisioning support required.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service21"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-driverkit.svg" class="service-icon" alt="DriverKit Allow Third Party UserClients">
+                                <label for="service21">DriverKit Allow Third Party UserClients</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service22"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-driverkit.svg" class="service-icon" alt="DriverKit Communicates with Drivers">
+                                <label for="service22">DriverKit Communicates with Drivers</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service23"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-driverkit.svg" class="service-icon" alt="DriverKit Family Audio (development)">
+                                <label for="service23">DriverKit Family Audio (development)</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td>Development only. <a href="#" class="learn-more">Learn more</a><br>
+                            Provisioning support required.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service24"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-driverkit.svg" class="service-icon" alt="DriverKit Family HID Device (development)">
+                                <label for="service24">DriverKit Family HID Device (development)</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td>Development only. <a href="#" class="learn-more">Learn more</a><br>
+                            Provisioning support required.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service25"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-driverkit.svg" class="service-icon" alt="DriverKit Family HID EventService (development)">
+                                <label for="service25">DriverKit Family HID EventService (development)</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td>Development only. <a href="#" class="learn-more">Learn more</a><br>
+                            Provisioning support required.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service26"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-driverkit.svg" class="service-icon" alt="DriverKit Family MIDI (development)">
+                                <label for="service26">DriverKit Family MIDI (development)</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td>Development only. <a href="#" class="learn-more">Learn more</a><br>
+                            Provisioning support required.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service27"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-driverkit.svg" class="service-icon" alt="DriverKit Family Networking (development)">
+                                <label for="service27">DriverKit Family Networking (development)</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td>Development only. <a href="#" class="learn-more">Learn more</a><br>
+                            Provisioning support required.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service28"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-driverkit.svg" class="service-icon" alt="DriverKit Family SCSIController (development)">
+                                <label for="service28">DriverKit Family SCSIController (development)</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td>Development only. <a href="#" class="learn-more">Learn more</a><br>
+                            Provisioning support required.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service29"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-driverkit.svg" class="service-icon" alt="DriverKit Family Serial (development)">
+                                <label for="service29">DriverKit Family Serial (development)</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td>Development only. <a href="#" class="learn-more">Learn more</a><br>
+                            Provisioning support required.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service30"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-driverkit.svg" class="service-icon" alt="DriverKit Transport HID (development)">
+                                <label for="service30">DriverKit Transport HID (development)</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td>Development only. <a href="#" class="learn-more">Learn more</a><br>
+                            Provisioning support required.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service31"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-driverkit.svg" class="service-icon" alt="DriverKit USB Transport (development)">
+                                <label for="service31">DriverKit USB Transport (development)</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td>Development only. <a href="#" class="learn-more">Learn more</a><br>
+                            Provisioning support required.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service32"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-extenvaddr.svg" class="service-icon" alt="Extended Virtual Addressing">
+                                <label for="service32">Extended Virtual Addressing</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service33"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-familycontrols.svg" class="service-icon" alt="Family Controls (Development)">
+                                <label for="service33">Family Controls (Development)</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td>Development only.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service34"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-file-provider.svg" class="service-icon" alt="FileProvider Testing Mode">
+                                <label for="service34">FileProvider Testing Mode</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service35"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-fntinstall.svg" class="service-icon" alt="Fonts">
+                                <label for="service35">Fonts</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service36"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-fskit.svg" class="service-icon" alt="FSKit Module">
+                                <label for="service36">FSKit Module</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service37"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-game-center.svg" class="service-icon" alt="Game Center">
+                                <label for="service37">Game Center</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service38"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-groupactivities.svg" class="service-icon" alt="Group Activities">
+                                <label for="service38">Group Activities</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service39"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-headpose.svg" class="service-icon" alt="Head Pose">
+                                <label for="service39">Head Pose</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service40"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-healthkit.svg" class="service-icon" alt="HealthKit">
+                                <label for="service40">HealthKit</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service41"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-healthkit.svg" class="service-icon" alt="HealthKit Estimate Recalibration">
+                                <label for="service41">HealthKit Estimate Recalibration</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service42"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-hls-interstitial.svg" class="service-icon" alt="HLS Interstitial Previews">
+                                <label for="service42">HLS Interstitial Previews</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service43"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-homekit.svg" class="service-icon" alt="HomeKit">
+                                <label for="service43">HomeKit</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service44"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-hsc639vei8.svg" class="service-icon" alt="Hotspot">
+                                <label for="service44">Hotspot</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service45"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-icloud.svg" class="service-icon" alt="iCloud">
+                                <label for="service45">iCloud</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service46"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-tap-to-displayId.svg" class="service-icon" alt="ID Verifier - Display Only">
+                                <label for="service46">ID Verifier - Display Only</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service47"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-in-app-purchase.svg" class="service-icon" alt="In-App Purchase">
+                                <label for="service47">In-App Purchase</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service48"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-systemext.svg" class="service-icon" alt="Increased Debugging Memory Limit">
+                                <label for="service48">Increased Debugging Memory Limit</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service49"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-systemext.svg" class="service-icon" alt="Increased Memory Limit">
+                                <label for="service49">Increased Memory Limit</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service50"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-inter-app-audio.svg" class="service-icon" alt="Inter-App Audio">
+                                <label for="service50">Inter-App Audio</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service51"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-journaling-suggestions.svg" class="service-icon" alt="Journaling Suggestions">
+                                <label for="service51">Journaling Suggestions</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service52"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-hls-interstitial.svg" class="service-icon" alt="Low Latency HLS">
+                                <label for="service52">Low Latency HLS</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service53"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-network-credentials.svg" class="service-icon" alt="Manage Thread Network Credentials (development)">
+                                <label for="service53">Manage Thread Network Credentials (development)</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td>Development only. <a href="#" class="learn-more">Learn more</a><br>
+                            Provisioning support required.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service54"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-managedapp-installation.svg" class="service-icon" alt="Managed App Installation UI">
+                                <label for="service54">Managed App Installation UI</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service55"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-maps.svg" class="service-icon" alt="Maps">
+                                <label for="service55">Maps</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service56"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-matter-allow-setup-payload.svg" class="service-icon" alt="Matter Allow Setup Payload">
+                                <label for="service56">Matter Allow Setup Payload</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service57"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-mdm.svg" class="service-icon" alt="MDM Managed Associated Domains">
+                                <label for="service57">MDM Managed Associated Domains</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service58"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-media-discovery.svg" class="service-icon" alt="Media Device Discovery">
+                                <label for="service58">Media Device Discovery</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service59"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-media-ext.svg" class="service-icon" alt="Media Extension Format Reader">
+                                <label for="service59">Media Extension Format Reader</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service60"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-media-ext.svg" class="service-icon" alt="Media Extension Video Decoder">
+                                <label for="service60">Media Extension Video Decoder</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service61"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-messages-collaboration.svg" class="service-icon" alt="Messages Collaboration">
+                                <label for="service61">Messages Collaboration</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service62"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-mp49fn762p.svg" class="service-icon" alt="Multipath">
+                                <label for="service62">Multipath</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service63"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-multitasking-camera-access.svg" class="service-icon" alt="Multitasking Camera Access">
+                                <label for="service63">Multitasking Camera Access</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service64"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-nwext04537.svg" class="service-icon" alt="Network Extensions">
+                                <label for="service64">Network Extensions</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service65"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-nfctrmay17.svg" class="service-icon" alt="NFC Tag Reading">
+                                <label for="service65">NFC Tag Reading</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service66"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-appclip.svg" class="service-icon" alt="On Demand Install Capable for App Clip Extensions">
+                                <label for="service66">On Demand Install Capable for App Clip Extensions</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service67"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-vpn-lite.svg" class="service-icon" alt="Personal VPN">
+                                <label for="service67">Personal VPN</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service68"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-notifications.svg" class="service-icon" alt="Push Notifications">
+                                <label for="service68">Push Notifications</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service69"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-push-to-talk.svg" class="service-icon" alt="Push to Talk">
+                                <label for="service69">Push to Talk</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service70"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-sensitive-content-analysis.svg" class="service-icon" alt="Sensitive Content Analysis">
+                                <label for="service70">Sensitive Content Analysis</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service71"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-shallow-depth.svg" class="service-icon" alt="Shallow Depth and Pressure">
+                                <label for="service71">Shallow Depth and Pressure</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service72"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-shared-with-you.svg" class="service-icon" alt="Shared with You">
+                                <label for="service72">Shared with You</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service73"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-applsignin.svg" class="service-icon" alt="Sign In with Apple">
+                                <label for="service73">Sign In with Apple</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service74"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-sim.svg" class="service-icon" alt="SIM Inserted for Wireless Carriers">
+                                <label for="service74">SIM Inserted for Wireless Carriers</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service75"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-rhsvud.svg" class="service-icon" alt="Siri">
+                                <label for="service75">Siri</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service76"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-spatial-audio.svg" class="service-icon" alt="Spatial Audio Profile">
+                                <label for="service76">Spatial Audio Profile</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service77"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-sustained-execution.svg" class="service-icon" alt="Sustained Execution">
+                                <label for="service77">Sustained Execution</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service78"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-systemext.svg" class="service-icon" alt="System Extension">
+                                <label for="service78">System Extension</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service79"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-timesensitive-notification.svg" class="service-icon" alt="Time Sensitive Notifications">
+                                <label for="service79">Time Sensitive Notifications</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service80"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-usermanage.svg" class="service-icon" alt="User Management">
+                                <label for="service80">User Management</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service81"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-vmnet.svg" class="service-icon" alt="VMNet">
+                                <label for="service81">VMNet</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service82"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-wallet.svg" class="service-icon" alt="Wallet">
+                                <label for="service82">Wallet</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service83"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-weatherkit.svg" class="service-icon" alt="WeatherKit">
+                                <label for="service83">WeatherKit</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service84"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-wireless-accessory.svg" class="service-icon" alt="Wireless Accessory Configuration">
+                                <label for="service84">Wireless Accessory Configuration</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="service85"></td>
+                            <td class="service-name">
+                                <img src="icons/portal-macbookair.svg" class="service-icon" alt="Mac Catalyst (Existing Apps Only)">
+                                <label for="service85">Mac Catalyst (Existing Apps Only)</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- App Services Table -->
+            <div id="app-services-tab" class="tab-content">
+                <table class="services-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 80px; text-align: left; padding-left: 0;">ENABLE</th>
+                            <th>NAME</th>
+                            <th style="width: 30%">DESCRIPTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" id="musickit"></td>
+                            <td class="service-name">
+                                <label for="musickit">MusicKit</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td>Access the Apple Music catalog and make personalized requests for authorized users.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="shazamkit"></td>
+                            <td class="service-name">
+                                <label for="shazamkit">ShazamKit</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td>Match audio signatures against Shazam's music catalog.</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="weatherkit"></td>
+                            <td class="service-name">
+                                <label for="weatherkit">WeatherKit</label>
+                                <span class="info-icon">i</span>
+                            </td>
+                            <td>Access the Apple Weather service.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="48px" height="48px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="48" height="48"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g style="clip-path:url(#SVGID_2_);">
+		<defs>
+			<rect id="SVGID_3_" width="48" height="48"/>
+		</defs>
+		<clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
+		</clipPath>
+		<path style="clip-path:url(#SVGID_4_);fill:none;stroke:#000000;stroke-width:1.979;stroke-miterlimit:10;" d="M45,30.563
+			c0,2.44-1.996,4.438-4.437,4.438h-9.127c-2.44,0-4.437-1.997-4.437-4.438V17.437C27,14.997,28.996,13,31.437,13h9.127
+			C43.004,13,45,14.997,45,17.437V30.563z"/>
+		<path style="clip-path:url(#SVGID_4_);fill:none;stroke:#000000;stroke-width:1.979;stroke-miterlimit:10;" d="M21,30.563
+			c0,2.44-1.996,4.438-4.436,4.438H7.436C4.996,35.001,3,33.004,3,30.563V17.437C3,14.997,4.996,13,7.436,13h9.128
+			C19.004,13,21,14.997,21,17.437V30.563z"/>
+	</g>
+</g>
+<g>
+	<defs>
+		<rect id="SVGID_5_" width="48" height="48"/>
+	</defs>
+	<clipPath id="SVGID_6_">
+		<use xlink:href="#SVGID_5_"  style="overflow:visible;"/>
+	</clipPath>
+	
+		<line style="clip-path:url(#SVGID_6_);fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;" x1="8.5" y1="23" x2="39.5" y2="23"/>
+	<polyline style="clip-path:url(#SVGID_6_);fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;" points="14.5,29 
+		8.5,23 14.5,17 	"/>
+	<polyline style="clip-path:url(#SVGID_6_);fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;" points="33.5,29 
+		39.5,23 33.5,17 	"/>
+</g>
+</svg>
