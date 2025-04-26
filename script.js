@@ -6,6 +6,50 @@ document.querySelectorAll('.services-table input[type="checkbox"]').forEach(chec
     });
 });
 
+// Improve mobile responsiveness by adding touchstart handlers
+document.querySelectorAll('.services-table input[type="checkbox"], .services-table label, input[type="radio"], .tab-item').forEach(element => {
+    // Add touchstart handler for faster mobile response
+    element.addEventListener('touchstart', function(e) {
+        // Prevent double-firing of events on mobile
+        e.preventDefault();
+        
+        if (element.tagName === 'INPUT') {
+            // Toggle checkbox state directly for immediate feedback
+            if (element.type === 'checkbox') {
+                element.checked = !element.checked;
+                // Trigger change event to ensure any listeners are notified
+                element.dispatchEvent(new Event('change'));
+            } else if (element.type === 'radio') {
+                element.checked = true;
+                element.dispatchEvent(new Event('change'));
+            }
+        } else if (element.tagName === 'LABEL') {
+            // Find the associated input and click it
+            const inputId = element.getAttribute('for');
+            if (inputId) {
+                const input = document.getElementById(inputId);
+                if (input) {
+                    input.dispatchEvent(new Event('change'));
+                }
+            }
+        } else if (element.classList.contains('tab-item')) {
+            // Handle tab switching
+            document.querySelectorAll('.tab-item').forEach(t => {
+                t.classList.remove('active');
+            });
+            
+            element.classList.add('active');
+            
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            const tabId = element.getAttribute('data-tab');
+            document.getElementById(tabId + '-tab').classList.add('active');
+        }
+    }, { passive: false });
+});
+
 // Handle tab switching
 document.querySelectorAll('.tab-item').forEach(tab => {
     tab.addEventListener('click', function() {

@@ -660,6 +660,11 @@ input[type="checkbox"], input[type="radio"],
         box-sizing: border-box;
     }
     
+    /* Remove blue line under heading in mobile view */
+    .header-container h1::after {
+        display: none;
+    }
+    
     .export-button {
         margin-top: 15px;
         width: 100%;
