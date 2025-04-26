@@ -684,6 +684,7 @@ input[type="checkbox"], input[type="radio"],
     input[type="text"] {
         width: 100%;
         box-sizing: border-box;
+        font-size: 16px; /* Prevent zoom on mobile devices */
     }
     
     .form-note {
