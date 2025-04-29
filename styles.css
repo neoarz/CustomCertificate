@@ -706,4 +706,26 @@ input[type="checkbox"], input[type="radio"],
 
 input[type="text"] {
     width: 100%;
+}
+
+.services-table tr.disabled-row {
+    opacity: 0.5;
+    background-color: rgba(44, 44, 46, 0.3) !important;
+    cursor: not-allowed;
+}
+
+.services-table tr.disabled-row:hover {
+    background-color: rgba(44, 44, 46, 0.3) !important;
+}
+
+.services-table tr.disabled-row td {
+    cursor: not-allowed;
+}
+
+.services-table tr.disabled-row input[type="checkbox"] {
+    cursor: not-allowed;
+}
+
+.services-table tr.disabled-row label {
+    cursor: not-allowed;
 } 
