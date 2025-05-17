@@ -21,6 +21,30 @@ header {
     display: flex;
     align-items: center;
     gap: 12px;
+    text-decoration: none;
+}
+
+.discord-btn {
+    padding: 8px 16px;
+    background-color: #5865F2;
+    color: white;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.discord-btn:hover {
+    background-color: #4752c4;
+}
+
+.discord-logo {
+    color: white;
+    flex-shrink: 0;
 }
 
 .logo-img {
@@ -595,6 +619,16 @@ input[type="checkbox"], input[type="radio"],
 
 /* Simple Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
+    .discord-btn {
+        padding: 6px 12px;
+        font-size: 13px;
+        gap: 6px;
+    }
+    
+    .discord-logo {
+        width: 14px;
+        height: 10px;
+    }
     /* Make content fit mobile width */
     main {
         padding: 15px 20px;
