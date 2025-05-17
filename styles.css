@@ -762,4 +762,81 @@ input[type="text"] {
 
 .services-table tr.disabled-row label {
     cursor: not-allowed;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: transparent;
+    padding: 12px 30px;
+    border-top: 1px solid rgba(58, 58, 60, 0.3);
+    margin-top: 40px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.footer-item {
+    color: #86868b;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 0 10px;
+    transition: color 0.2s ease;
+}
+
+a.footer-item:hover {
+    color: #0a84ff;
+}
+
+.footer-separator {
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background-color: #86868b;
+}
+
+/* Mobile responsiveness for footer */
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 12px 15px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .footer-separator {
+        display: none;
+    }
+    
+    .footer-item {
+        padding: 5px 0;
+    }
+    
+    /* Create a row for terms/privacy links */
+    .footer-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
 } 

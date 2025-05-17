@@ -199,7 +199,7 @@ document.getElementById('export-btn').addEventListener('click', () => {
 
 // Prevent context menu on protected elements
 document.addEventListener('DOMContentLoaded', () => {
-    const protectedElements = document.querySelectorAll('.button, .logo-img, .service-icon, .info-icon, .service-name, .logo, .no-copy-content, .discord-btn');
+    const protectedElements = document.querySelectorAll('.button, .logo-img, .service-icon, .info-icon, .service-name, .logo, .no-copy-content, .discord-btn, .footer-logo, .footer-logo-img');
     
     protectedElements.forEach(element => {
         element.addEventListener('contextmenu', event => {
