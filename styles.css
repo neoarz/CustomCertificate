@@ -274,7 +274,7 @@ input[type="radio"] {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .services-table th {
     text-align: left;
@@ -769,7 +769,7 @@ input[type="text"] {
     background-color: transparent;
     padding: 12px 30px;
     border-top: 1px solid rgba(58, 58, 60, 0.3);
-    margin-top: 40px;
+    margin-top: 15px;
 }
 
 .footer-content {
@@ -811,6 +811,7 @@ a.footer-item:hover {
 @media screen and (max-width: 768px) {
     .footer {
         padding: 12px 15px;
+
     }
     
     .footer-content {
